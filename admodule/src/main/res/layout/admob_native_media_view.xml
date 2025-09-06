@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.gms.ads.nativead.NativeAdView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/native_ad_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#66000000">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/ad_notification_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/size_0"
+            android:background="@drawable/bg_ad_native_text"
+            android:gravity="center"
+            android:paddingHorizontal="@dimen/size_4"
+            android:text="@string/ad"
+            android:textColor="@color/gnt_white"
+            android:textSize="@dimen/text_size_14"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/cta"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/ad_button_install_size"
+            android:layout_marginTop="@dimen/size_16"
+            android:background="@drawable/button_vang"
+            android:ellipsize="end"
+            android:fontFamily="@font/fredoka_one_regular"
+            android:gravity="center"
+            android:lines="1"
+            android:paddingBottom="@dimen/size_4"
+            android:singleLine="true"
+            android:text="@string/install"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="@dimen/ad_text_install_size"
+            android:textStyle="bold"
+            app:layout_constraintDimensionRatio="H,142:336"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ad_notification_view" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvCtaOverlay"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="@dimen/size_4"
+            android:layout_marginBottom="@dimen/size_8"
+            android:elevation="10dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/fredoka_one_regular"
+            android:gravity="center"
+            android:lines="1"
+            android:singleLine="true"
+            android:text="@string/install"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/ad_text_install_size"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/cta"
+            app:layout_constraintEnd_toEndOf="@+id/cta"
+            app:layout_constraintStart_toStartOf="@+id/cta"
+            app:layout_constraintTop_toTopOf="@+id/cta" />
+
+        <com.google.android.gms.ads.nativead.MediaView
+            android:id="@+id/media_view"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/size_120"
+            android:layout_marginVertical="@dimen/size_16"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="16:9"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cta" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/icon"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/size_56"
+            android:layout_marginBottom="@dimen/size_0"
+            android:scaleType="fitCenter"
+            app:layout_constraintBottom_toBottomOf="@+id/media_view"
+            app:layout_constraintDimensionRatio="H,1:1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/media_view"
+            tools:src="@tools:sample/avatars" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/primary"
+            android:layout_width="@dimen/size_0"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/size_10"
+            android:ellipsize="end"
+            android:gravity="center|start"
+            android:includeFontPadding="false"
+            android:lines="1"
+            android:textColor="@color/gnt_white"
+            android:textSize="@dimen/text_size_15"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/rating_bar"
+            app:layout_constraintEnd_toStartOf="@+id/media_view"
+            app:layout_constraintStart_toEndOf="@+id/icon"
+            app:layout_constraintTop_toTopOf="@+id/icon"
+            tools:text="@tools:sample/lorem" />
+
+        <androidx.appcompat.widget.AppCompatRatingBar
+            android:id="@+id/rating_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:isIndicator="true"
+            android:lines="1"
+            android:maxHeight="@dimen/size_18"
+            android:minHeight="@dimen/size_18"
+            android:numStars="5"
+            android:progressDrawable="@drawable/ratingbar_png_selector"
+            android:rating="2.5"
+            android:stepSize="0.1"
+            app:layout_constraintBottom_toBottomOf="@+id/icon"
+            app:layout_constraintStart_toStartOf="@+id/primary" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.gms.ads.nativead.NativeAdView>
